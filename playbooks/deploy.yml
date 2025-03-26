@@ -1,0 +1,19 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Copy artifact to server
+      copy:
+        src: /path/to/local/artifact.tar.gz
+        dest: /opt/artifacts/
+
+    - name: Extract artifact
+      unarchive:
+        src: /opt/artifacts/artifact.tar.gz
+        dest: /opt/artifacts/
+        remote_src: yes
+
+    - name: Restart service
+      systemd:
+        name: your-service
+        state: restarted
+
