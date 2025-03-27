@@ -1,0 +1,28 @@
+---
+- name: Deploy Java application to myjavaproject server
+  hosts: myjavaproject
+  become: true
+  tasks:
+    - name: Ensure the target directory exists
+      file:
+        path: /opt/my-java-app
+        state: directory
+        mode: '0755'
+
+    - name: Copy JAR file to the server
+      copy:
+        src: my-java-project-1.0-SNAPSHOT.jar
+        dest: /opt/my-java-app/app.jar
+        mode: '0755'
+
+    - name: Ensure the application is executable
+      file:
+        path: /opt/my-java-app/app.jar
+        mode: '0755'
+
+    - name: Run the Java application
+      command: nohup java -jar /opt/my-java-app/app.jar > /opt/my-java-app/app.log 2>&1 &
+      async: 10
+      poll: 0
+
+
