@@ -24,7 +24,7 @@ pipeline {
         stage('Build JAR') {
             steps {
                 // Building the Java application using Maven
-                sh 'mvn -f Documents/my-java-project/pom.xml clean package'  // This should now work if Maven is configured correctly
+                sh 'mvn -f my-java-project/pom.xml clean package'  // This should now work if Maven is configured correctly
             }
         }
 
