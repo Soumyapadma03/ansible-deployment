@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Project coordinates -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project identifiers -->
+    <groupId>com.example</groupId>  <!-- Unique group identifier (like the package name) -->
+    <artifactId>my-java-project</artifactId> <!-- Name of your project -->
+    <version>1.0-SNAPSHOT</version> <!-- Version of your project -->
+
+    <!-- Name and description -->
+    <name>My Java Project</name>
+    <description>A simple Java project built with Maven</description>
+
+    <!-- Dependencies for the project -->
+    <dependencies>
+        <!-- Example of a dependency for unit testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version> <!-- Version of JUnit -->
+            <scope>test</scope> <!-- This dependency is only needed for testing -->
+        </dependency>
+    </dependencies>
+
+    <!-- Build configuration -->
+    <build>
+        <!-- Compiler plugin to specify the Java version -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>11</source> <!-- Java version for source code -->
+                    <target>11</target> <!-- Java version for bytecode -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
