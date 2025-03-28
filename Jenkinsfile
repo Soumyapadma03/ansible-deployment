@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Verify Ansible') {
           steps {
-                sh 'ansible-playbook --version'
+                sh "/opt/homebrew/bin/ansible-playbook --version"
              }
  
         }     
