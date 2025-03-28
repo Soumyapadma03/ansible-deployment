@@ -24,7 +24,7 @@ pipeline {
         stage('Build JAR') {
             steps {
                 // Building the Java application using Maven
-                sh "mvn -f ansible-deployment/pom.xml clean package"
+                sh "mvn -f pom.xml clean package"
             }
         }
 
