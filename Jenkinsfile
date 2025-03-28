@@ -14,6 +14,13 @@ pipeline {
     }
 
     stages {
+        stage('Verify Ansible') {
+          steps {
+                sh 'ansible-playbook --version'
+             }
+ 
+        }     
+
         stage('Checkout') {
             steps {
                 // Checkout the code from the Git repository
